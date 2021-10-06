@@ -35,8 +35,8 @@ class GameObject {
   }
 
   /**
-   * do smoothpan with destination
-   * sets new vel variable
+   * Hace que los movimientos sean mas suaves.
+   * Pone una nueva variable no se como decir "setear en español"
    */
   void smoothMove() {
     float vX = des.x - loc.x;
