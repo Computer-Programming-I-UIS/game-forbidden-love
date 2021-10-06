@@ -152,8 +152,4 @@ class Player extends Actor {
          p.bounced = true;
        }
      }
-     
- 
-   
-  
   
