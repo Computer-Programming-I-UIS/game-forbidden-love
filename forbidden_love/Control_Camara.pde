@@ -5,9 +5,21 @@ class Control_Camara extends Objetos_Juego {
     des = loc.copy();
     valorSuavizado = .025;
   }
-  Cam2D(float x_, float y_) {
+  Control_Camara(float x_, float y_) {
     super(x_, y_);
 
     des = loc.copy();
     valorSuavizado = .1;
   }
+   @Override
+   void update() {
+    suavizadoMovimiento();
+
+    if (vel.x > 0)
+      vel.x = 0;
+
+    CalculoFisicas();
+    translate(loc.x, loc.y);
+  }
+
+}
