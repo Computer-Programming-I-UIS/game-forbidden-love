@@ -1,24 +1,24 @@
-class Control_Camara extends Objetos_Juego {
-  Control_Camara() {
+class Cam2D extends GameObject {
+  Cam2D() {
     super(width/2, height/2);
 
     des = loc.copy();
-    valorSuavizado = .025;
+    smoothFactor = .025;
   }
-  Control_Camara(float x_, float y_) {
+  Cam2D(float x_, float y_) {
     super(x_, y_);
 
     des = loc.copy();
-    valorSuavizado = .1;
+    smoothFactor = .1;
   }
-   @Override
-   void update() {
-    suavizadoMovimiento();
+  @Override
+  void update() {
+    smoothMove();
 
     if (vel.x > 0)
       vel.x = 0;
 
-    CalculoFisicas();
+    simplePhysicsCal();
     translate(loc.x, loc.y);
   }
 
